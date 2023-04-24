@@ -1,0 +1,22 @@
+---
+# Use the latest pgbouncer_exporter release
+pgbouncer_exporter_version: 'latest'
+
+# Alternatively, set a specific version
+# See available releases: https://github.com/prometheus/pgbouncer_exporter/releases/
+# pgbouncer_exporter_version: '0.18.1'
+
+pgbouncer_exporter_arch: 'amd64'
+pgbouncer_exporter_download_url: https://github.com/prometheus/pgbouncer_exporter/releases/download/v{{ pgbouncer_exporter_version }}/pgbouncer_exporter-{{ pgbouncer_exporter_version }}.linux-{{ pgbouncer_exporter_arch }}.tar.gz
+
+pgbouncer_exporter_bin_path: /usr/local/bin/pgbouncer_exporter
+
+# Set pgbouncer_exporter_host to localhost if you wish to expose pgbouncer_exporter on localhost only.
+pgbouncer_exporter_host: ''
+pgbouncer_exporter_port: 9127
+pgbouncer_exporter_options: ''
+
+pgbouncer_exporter_state: started
+pgbouncer_exporter_enabled: true
+
+pgbouncer_user: pgbouncer_exporter

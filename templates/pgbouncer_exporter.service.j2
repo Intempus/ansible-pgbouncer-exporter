@@ -1,0 +1,10 @@
+[Unit]
+Description=Pgbouncer Exporter
+
+[Service]
+TimeoutStartSec=0
+User={{ pgbouncer_user }}
+ExecStart={{ pgbouncer_exporter_bin_path }} --web.listen-address={{ pgbouncer_exporter_host }}:{{ pgbouncer_exporter_port }} {{ pgbouncer_exporter_options }}
+
+[Install]
+WantedBy=multi-user.target

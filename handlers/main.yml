@@ -1,0 +1,5 @@
+---
+- name: restart pgbouncer_exporter
+  service:
+    name: pgbouncer_exporter
+    state: restarted
