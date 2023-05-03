@@ -20,3 +20,5 @@ pgbouncer_exporter_state: started
 pgbouncer_exporter_enabled: true
 
 pgbouncer_user: pgbouncer_exporter
+
+pgbouncer_systemd_service: pgbouncer.service

@@ -46,6 +46,25 @@
     mode: 0644
   register: pgbouncer_exporter_service
 
+# https://www.redhat.com/sysadmin/systemd-automate-recovery
+- name: Copy the pgbouncer_exporter healer systemd unit file.
+  template:
+    src: pgbouncer_exporter_healer.service.j2
+    dest: /etc/systemd/system/pgbouncer_exporter_healer.service
+    mode: u+rx
+  notify: restart pgbouncer_exporter
+  tags:
+    - configure
+
+- name: Copy the pgbouncer_exporter healer script.
+  template:
+    src: pgbouncer_exporter_healer.sh.j2
+    dest: /usr/local/bin/pgbouncer_exporter_healer.sh
+    mode: 0744
+  notify: restart pgbouncer_exporter
+  tags:
+    - configure
+
 - name: Reload systemd daemon if unit file is changed.
   systemd:
     daemon_reload: true

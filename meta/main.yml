@@ -1,7 +1,7 @@
 ---
 dependencies: []
 galaxy_info:
-  author: kirillkukartsev
+  author: kirkirillka
   role_name: pgbouncer_exporter
   description: Prometheus' pgbouncer_exporter for Linux hosts.
   license: license (MIT)

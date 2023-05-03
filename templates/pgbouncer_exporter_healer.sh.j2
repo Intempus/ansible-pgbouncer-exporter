@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo 'Attempting to recover!' > /tmp/pgbouncer_exporter_recovery_info
+systemctl reset-failed pgbouncer_exporter
+systemctl restart pgbouncer_exporter

@@ -1,9 +1,16 @@
 [Unit]
 Description=Pgbouncer Exporter
+After={{ pgbouncer_systemd_service }} network.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+OnFailure=pgbouncer_exporter_healer.service
+ 
 
 [Service]
 TimeoutStartSec=0
 User={{ pgbouncer_user }}
+Restart=on-failure
+RestartSec=10s
 ExecStart={{ pgbouncer_exporter_bin_path }} --web.listen-address={{ pgbouncer_exporter_host }}:{{ pgbouncer_exporter_port }} {{ pgbouncer_exporter_options }}
 
 [Install]
