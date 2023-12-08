@@ -7,7 +7,8 @@ pgbouncer_exporter_version: 'latest'
 # pgbouncer_exporter_version: '0.18.1'
 
 pgbouncer_exporter_arch: 'amd64'
-pgbouncer_exporter_download_url: https://github.com/prometheus/pgbouncer_exporter/releases/download/v{{ pgbouncer_exporter_version }}/pgbouncer_exporter-{{ pgbouncer_exporter_version }}.linux-{{ pgbouncer_exporter_arch }}.tar.gz
+pgbouncer_exporter_download_url: https://github.com/prometheus-community/pgbouncer_exporter/releases/download/v{{ pgbouncer_exporter_version }}/pgbouncer_exporter-{{ pgbouncer_exporter_version }}.linux-{{ pgbouncer_exporter_arch }}.tar.gz
+pgbouncer_exporter_checksums_url: https://github.com/prometheus-community/pgbouncer_exporter/releases/download/v{{ pgbouncer_exporter_version }}/sha256sums.txt
 
 pgbouncer_exporter_bin_path: /usr/local/bin/pgbouncer_exporter
 
@@ -22,3 +23,7 @@ pgbouncer_exporter_enabled: true
 pgbouncer_user: postgres
 
 pgbouncer_systemd_service: pgbouncer.service
+
+pgbouncer_exporter_skip_install: false
+
+pgbouncer_exporter_binary_local_dir: ""
