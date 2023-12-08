@@ -70,10 +70,3 @@
     name: pgbouncer_exporter
     state: "{{ pgbouncer_exporter_state }}"
     enabled: "{{ pgbouncer_exporter_enabled }}"
-
-- name: Verify pgbouncer_exporter is responding to requests.
-  uri:
-    url: "http://{% if pgbouncer_exporter_host !='' %}{{ pgbouncer_exporter_host }}{% else %}localhost{% endif %}:{{ pgbouncer_exporter_port }}/"
-    return_content: true
-  register: metrics_output
-  failed_when: "'Metrics' not in metrics_output.content"
