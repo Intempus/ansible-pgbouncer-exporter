@@ -19,6 +19,6 @@ pgbouncer_exporter_options: ''
 pgbouncer_exporter_state: started
 pgbouncer_exporter_enabled: true
 
-pgbouncer_user: pgbouncer_exporter
+pgbouncer_user: postgres
 
 pgbouncer_systemd_service: pgbouncer.service

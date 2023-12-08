@@ -33,12 +33,6 @@
     pgbouncer_exporter_download_check is changed
     or pgbouncer_exporter_version_check.stdout | length == 0
 
-- name: Create pgbouncer_exporter user.
-  user:
-    name: "{{ pgbouncer_user }}"
-    shell: /sbin/nologin
-    state: present
-
 - name: Copy the pgbouncer_exporter systemd unit file.
   template:
     src: pgbouncer_exporter.service.j2
